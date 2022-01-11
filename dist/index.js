@@ -1,24 +1,16 @@
-function calculateTax(amount: number, format: boolean): string | number | null {
-    if (amount === 0) {
-        return null;
-    }
-    const calcAmount = amount * 1.2;
-    return format ? `$${calcAmount.toFixed(2)}` : calcAmount;
+function calculatePrice(quantity, price) {
+    return quantity * price;
 }
-
-let taxValue!: string | number | null;
-eval("taxValue = calculateTax(100, false)");
-
-if (taxValue !== null) {
-    let nonNullTaxValue: string | number = taxValue;
-    switch (typeof taxValue) {
-        case "number":
-            console.log(`Number Value: ${taxValue.toFixed(2)}`);
-            break;
-        case "string":
-            console.log(`String Value: ${taxValue.charAt(0)}`);
-            break;
-    }
-} else {
-    console.log("Value is not a string or a number");
+let total = calculatePrice(2, 19.99);
+console.log(`Price: ${total}`);
+function getRandomValue() {
+    return Math.floor(Math.random() * 4) + 1;
 }
+function getCityString(city) {
+    return `City: ${city}`;
+}
+let str = getCityString("London");
+console.log(str);
+console.log(3 / 2);
+console.log(Math.floor(3 / 2));
+//# sourceMappingURL=index.js.map

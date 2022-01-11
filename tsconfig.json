@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target" : "es2018",
+    "target": "es2020",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "declaration": true,
+    "strictNullChecks": true,
+    "module": "commonjs",
+    "sourceMap": true
   }
 }

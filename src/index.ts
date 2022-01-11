@@ -1,13 +1,25 @@
-function checkNumber(val: any): asserts val is number {
-    if (typeof val != "number") {
-        throw new Error("Not a number");
-    }
+function calculatePrice(quantity: 1 | 2, price: number): number {
+    return quantity * price;
 }
 
-function calculateTax(amount: number | null): number {
-    checkNumber(amount);
-    return amount * 1.2;
+let total = calculatePrice(2, 19.99);
+console.log(`Price: ${total}`);
+
+type numVals = 1 | 2 | 3 | 4;
+
+function getRandomValue(): numVals {
+    return Math.floor(Math.random() * 4) + 1 as numVals;
 }
 
-let taxAmount: number = calculateTax(100);
-console.log(`Tax value: ${taxAmount}`)
+type cities = "London" | "Paris" | "Chicago";
+type cityResponse = `City: ${ cities }`;
+
+function getCityString(city: cities): cityResponse {
+    return `City: ${city}` as cityResponse;
+}
+
+let str = getCityString("London");
+console.log(str);
+
+console.log(3/2);
+console.log(Math.floor(3/2));
